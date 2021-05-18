@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+    <link type="text/css" href="/jquery.mobile-1.4.5.css" rel="stylesheet" />
+    <script src = "/js/jquery-1.11.3.min.js"></script>
+    <script src = "/js/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+
+
+<body>
+
+<style>
+    ul li h2 {
+        white-space: normal !important;
+        word-wrap:break-word;
+        overflow-wrap: break-word;
+    }
+</style>
+
+<div data-role = "page" id = "pageone">
+    <div data-role = "header" data-th-background="b">
+        <h1 th:text="${medCity}"></h1>
+    </div>
+
+
+
+    <div data-role = "main" class = "ui-content">
+        <ul id="cityListId"
+            data-role="listview" data-filter="true"
+            data-filter-placeholder="Search...">
+
+            <li th:each="t : ${tweets}">
+                <h2 th:utext="${t.text}"></h2>
+            </li>
+
+        </ul>
+<!--        -->
+<!--            <div th:each="t : ${tweets}">-->
+<!--                <h2 th:utext="${t.text}"></h2>-->
+<!--            </div>-->
+
+    </div>
+
+    <div data-role = "footer">
+        <h1>Join2Cure - Dashboard</h1>
+    </div>
+</div>
+
+</body>
+</html>

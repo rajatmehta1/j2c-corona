@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+    <link type="text/css" href="/jquery.mobile-1.4.5.css" rel="stylesheet" />
+    <script src = "/js/jquery-1.11.3.min.js"></script>
+    <script src = "/js/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+
+
+<body>
+<div data-role = "page" id = "pageone">
+    <div data-role = "header">
+        <h1>Medical Devices - Twitter</h1>
+    </div>
+
+    <div data-role = "main" class = "ui-content">
+        <ul id="itemsId" data-role="listview" data-filter="false">
+
+            <li>
+                <a th:href="@{'/v1/cd/' + ${cityName} + '/devices/oxygen'}">Oxygen Cylinder</a>
+            </li>
+
+            <li>
+                <a th:href="@{'/v1/cd/' + ${cityName} + '/medicine/oxygen-or-concentrator'}">Oxygen Concentrator</a>
+            </li>
+
+            <li>
+                <a th:href="@{'/v1/cd/' + ${cityName} + '/medicine/ventilator-OR-ventilators'}">Ventilator</a>
+            </li>
+
+        </ul>
+    </div>
+
+</div>
+</body>
+</html>

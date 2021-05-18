@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+    <link type="text/css" href="/jquery.mobile-1.4.5.css" rel="stylesheet" />
+    <script src = "/js/jquery-1.11.3.min.js"></script>
+    <script src = "/js/jquery.mobile-1.4.5.min.js"></script>
+
+    <style>
+        ul li h2 {
+            white-space: normal !important;
+            word-wrap:break-word;
+            overflow-wrap: break-word;
+        }
+    </style>
+
+</head>
+
+
+
+<body>
+<div data-role = "page" id = "pageone">
+    <div data-role = "header" data-th-background="b">
+        <h1>Corona Info Dashboard</h1>
+    </div>
+
+    <div data-role = "main" class = "ui-content">
+        <label for="addressId"><strong>Enter your City:</strong></label>
+        <input data-type="search" name="addressId"
+               id="addressId" value="">
+
+        <label>or</label>
+
+        <label for="cityListId"><strong>Choose a City</strong></label>
+        <ul id="cityListId" data-role="listview"
+            data-filter="true" data-filter-placeholder="Search City..."
+            data-inset="true"
+            >
+                <li th:each="city : ${cities}">
+                    <a th:href="@{'/v1/cd/' + ${city.shortName} + '/dashboard'}"
+                       th:text="${city.name}"></a>
+                </li>
+        </ul>
+        
+    </div>
+
+    <div data-role = "footer">
+        <h6>@Join2Cure</h6>
+    </div>
+</div>
+<script language="JavaScript">
+    $(document).on("pageinit",function(){
+        // alert("pageinit event fired!")
+        $('#addressId').change(function() {
+            // alert('test --> ' + $('#addressId').val());
+            document.location.href = "/v1/cd/" + $('#addressId').val() + "/dashboard";
+        });
+    });
+    // $('#addressId').change(function() {
+    //     alert('test --> ' + $('#addressId').val());
+    //     document.location.href = "/v1/cd/" + $('#addressId').val() + "/dashboard";
+    // });
+</script>
+</body>
+</html>

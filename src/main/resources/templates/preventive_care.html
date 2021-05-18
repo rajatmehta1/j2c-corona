@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+    <link type="text/css" href="/jquery.mobile-1.4.5.css" rel="stylesheet" />
+    <script src = "/js/jquery-1.11.3.min.js"></script>
+    <script src = "/js/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+
+
+<body>
+<div data-role = "page" id = "pageone">
+    <div data-role = "header">
+        <h1>Delhi - Corona Info</h1>
+    </div>
+
+    <div data-role = "main" class = "ui-content">
+        <ul id="itemsId" data-role="listview" data-filter="true" data-filter-placeholder="Search in City..." data-inset="true">
+            <li>
+                <a href="/v1/pc/masks">Masks</a>
+            </li>
+            <li>
+                <a href="/v1/pc/sd">Social Distancing</a>
+            </li>
+            <li>
+                <a href="https://www.mohfw.gov.in/covid_vaccination/vaccination/index.html">
+                    Vaccine Information
+                </a>
+            </li>
+            <li>
+                <a href="https://www.mohfw.gov.in/covid_vaccination/vaccination/index.html">
+                    Vaccine Information (Twitter)
+                </a>
+            </li>
+            <li>
+                <a href="https://www.amazon.in/pcr/Top-Rated-Hand-Sanitizers-Reviews/4264053031">Sanitizers (Amazon)</a>
+            </li>
+            <li>
+                <a href="https://www.flipkart.com/q/hand-sanitizer?sort=popularity">Sanitizers (Flipkart)</a>
+            </li>
+        </ul>
+    </div>
+
+    <div data-role = "footer">
+        <h1>Join2Cure - Dashboard</h1>
+    </div>
+</div>
+</body>
+</html>

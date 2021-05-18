@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+    <link type="text/css" href="/jquery.mobile-1.4.5.css" rel="stylesheet" />
+    <script src = "/js/jquery-1.11.3.min.js"></script>
+    <script src = "/js/jquery.mobile-1.4.5.min.js"></script>
+<!--    <link rel="stylesheet" href="http://demos.jquerymobile.com/1.4.0/theme-classic/theme-classic.css" />-->
+
+    <style>
+        ul li h2 {
+            white-space: normal !important;
+            word-wrap:break-word;
+            overflow-wrap: break-word;
+        }
+        .w3-green {
+            color: #fff!important;
+            background-color: #4CAF50!important;
+        }
+    </style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L99JZY5YCB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-L99JZY5YCB');
+    </script>
+</head>
+
+
+
+<body>
+<div data-role = "page" id = "pageone">
+    <div data-role = "header" data-th-background="b">
+        <h1>Corona Info Dashboard</h1>
+    </div>
+
+    <div id="ui-body-test" class="ui-body ui-body-a" style="margin-bottom:1em;">
+<!--        <p>-->
+<!--            I am a div with classes ui-body, ui-body-<span class="theme">a</span> and ui-corner-all.-->
+<!--        </p>-->
+<!--        <p><a href="#">I am a link</a></p>-->
+        <h3>This small application contains information like medicines, oxygen, hospital beds
+            for corona patients. We are pulling information from Twitter and other sources for this.</h3>
+        <h3>Go to the main page :</h3>
+
+        <a href="/v1/cd/cities" data-role="button" class="w3-green">OPEN - Corona Dashboard</a>
+<!--        <a href="#panel-overlay" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-mini">Overlay</a>-->
+<!--        <a href="#panel-push" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-mini">Push</a>-->
+    </div>
+
+    <div data-role = "footer">
+        <h6>@Join2Cure</h6>
+    </div>
+</div>
+<script language="JavaScript">
+    $(document).on("pageinit",function(){
+        // alert("pageinit event fired!")
+        $('#addressId').change(function() {
+            // alert('test --> ' + $('#addressId').val())
+            document.location.href = "/v1/cd/" + $('#addressId').val() + "/dashboard"
+        })
+
+    });
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L99JZY5YCB"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-L99JZY5YCB');
+</script>
+</body>
+</html>

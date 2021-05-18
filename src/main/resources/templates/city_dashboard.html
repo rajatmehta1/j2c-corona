@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+    <link type="text/css" href="/jquery.mobile-1.4.5.css" rel="stylesheet" />
+    <script src = "/js/jquery-1.11.3.min.js"></script>
+    <script src = "/js/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        ul li h2 {
+            white-space: normal !important;
+            word-wrap:break-word;
+            overflow-wrap: break-word;
+        }
+        .w3-green {
+            color: #fff!important;
+            background-color: #4CAF50!important;
+        }
+    </style>
+</head>
+
+
+
+<body>
+<style>
+    ul li h2 {
+        white-space: normal !important;
+        word-wrap:break-word;
+        overflow-wrap: break-word;
+    }
+    .w3-green {
+        color: #fff!important;
+        background-color: #4CAF50!important;
+    }
+</style>
+<div data-role = "page" id = "pageone">
+    <div data-role = "header">
+        <h1><span th:text="${city}"></span> - Corona Info</h1>
+    </div>
+
+    <div data-role = "main" class = "ui-content">
+        <ul id="itemsId" data-role="listview" data-filter="true" data-filter-placeholder="Search..." data-inset="true">
+                <li>
+                    <a th:href="@{'/v1/cd/' + ${city} + '/medicines'}">
+                        Medicines
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{'/v1/cd/' + ${city} + '/avlhsp'}">
+                        Hospital(Beds,Ambulance...)
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{'/v1/cd/' + ${city} + '/devices'}">Medical Devices(Cylinders...)</a>
+                </li>
+                <li>
+                    <a href="/v1/cd/teles">Doctors (or Telehealth)</a>
+                </li>
+                <li>
+                    <a href="/v1/pc">Preventive Care(Masks...)</a>
+                </li>
+<!--                <li>-->
+<!--                    <a href="">Important Phone Numbers</a>-->
+<!--                </li>-->
+        </ul>
+    </div>
+
+    <div data-role = "footer">
+        <h1>Join2Cure - Dashboard</h1>
+    </div>
+</div>
+</body>
+</html>
